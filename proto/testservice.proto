@@ -10,6 +10,7 @@ service TestService {
 
 message Request {
     string name = 1;
+    bool beautiful = 2;
 }
 
 message Response {

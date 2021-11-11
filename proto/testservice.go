@@ -1,18 +1,28 @@
 package gen
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"time"
+)
 
 type TestService struct {
 }
 
 func (s *TestService) mustEmbedUnimplementedTestServiceServer() {
-    panic("implement me")
+	panic("implement me")
 }
 
 func (s *TestService) Do(ctx context.Context, req *Request) (*Response, error) {
-    response := new(Response)
+	beautiful := ""
+	if req.GetBeautiful() {
+		beautiful = "!"
+	}
 
-    response.Message = "Hello, grpc! Request: " + req.Name
+	response := new(Response)
+	response.Message = fmt.Sprintf("Hello, %s%s", req.GetName(), beautiful)
 
-    return response, nil
+	time.Sleep(5 * time.Second)
+
+	return response, nil
 }
