@@ -8,7 +8,9 @@ import (
 )
 
 type Configuration struct {
-	DbDsn string `yaml:"database_dsn"`
+	DbDsn    string `yaml:"database_dsn"`
+	GrpcHost string `yaml:"grpc_host"`
+	GrpcPort string `yaml:"grpc_port"`
 }
 
 var (

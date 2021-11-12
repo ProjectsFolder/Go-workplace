@@ -1,1 +1,3 @@
 database_dsn: "database_dsn"
+grpc_host: "grpc_host"
+grpc_port: "grpc_port"
