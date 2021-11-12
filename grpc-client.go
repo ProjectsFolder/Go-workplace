@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"google.golang.org/grpc"
-	gen "grpc/proto"
 	"log"
 	"os"
+	gen "workplace/proto"
 )
 
 func main() {
