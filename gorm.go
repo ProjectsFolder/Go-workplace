@@ -12,10 +12,7 @@ func main() {
         panic("failed to connect database")
     }
 
-    err = db.AutoMigrate(&entity.Product{})
-    if err != nil {
-        panic("failed to migration database")
-    }
+    database.Migrate();
 
     user := entity.User{Name: "asylum29"}
     db.Create(&user)
