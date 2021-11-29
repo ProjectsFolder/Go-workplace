@@ -5,8 +5,6 @@ import (
     "fmt"
     "gorm.io/gorm"
     "time"
-    "workplace/internal/config"
-    "workplace/internal/database"
     "workplace/internal/entity"
     "workplace/internal/injector"
 )
@@ -29,10 +27,6 @@ func (s *TestService) Do(ctx context.Context, req *Request) (*Response, error) {
 
     container := injector.GetContainer()
     container.Invoke(func(db *gorm.DB) {
-        db, err := database.GetConnection(config.GetConfig())
-        if err != nil {
-            panic("failed to connect database")
-        }
         log := entity.GrpcLog{Message: req.GetName()}
         db.Create(&log)
     })
