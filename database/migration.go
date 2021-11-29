@@ -6,7 +6,7 @@ import (
 
 func Migrate()  {
     db, _ := GetConnection()
-    err := db.AutoMigrate(&entity.Product{})
+    err := db.AutoMigrate(&entity.Product{}, &entity.GrpcLog{})
     if err != nil {
         panic("failed to migration database")
     }

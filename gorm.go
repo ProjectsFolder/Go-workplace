@@ -12,7 +12,7 @@ func main() {
         panic("failed to connect database")
     }
 
-    database.Migrate();
+    database.Migrate()
 
     user := entity.User{Name: "asylum29"}
     db.Create(&user)
