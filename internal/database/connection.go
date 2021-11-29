@@ -5,7 +5,7 @@ import (
     "gorm.io/gorm"
     "gorm.io/gorm/logger"
     "sync"
-    "workplace/config"
+    "workplace/internal/config"
 )
 
 var (
@@ -13,9 +13,8 @@ var (
     once       sync.Once
 )
 
-func GetConnection() (db *gorm.DB, err error) {
+func GetConnection(configuration *config.Configuration) (db *gorm.DB, err error) {
     once.Do(func() {
-        configuration := config.GetConfig()
         connection, err = gorm.Open(mysql.Open(configuration.DbDsn), &gorm.Config{
             Logger: logger.Default.LogMode(logger.Silent),
         })

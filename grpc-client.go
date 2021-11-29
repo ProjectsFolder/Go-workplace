@@ -5,7 +5,7 @@ import (
     "google.golang.org/grpc"
     "log"
     "os"
-    "workplace/config"
+    "workplace/internal/config"
     gen "workplace/proto"
 )
 
