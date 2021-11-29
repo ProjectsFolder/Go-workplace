@@ -1,10 +1,10 @@
 package entity
 
 import (
-	"gorm.io/gorm"
+    "gorm.io/gorm"
 )
 
 type GrpcLog struct {
-	gorm.Model
-	Message string
+    gorm.Model
+    Message string
 }
