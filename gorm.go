@@ -11,7 +11,7 @@ import (
 func main() {
     container := injector.GetContainer()
 
-    err := container.Invoke(func(db *gorm.DB, repository *database.ProductRepository) {
+    err := container.Invoke(func(db *gorm.DB, repository *database.ProductRepositoryImpl) {
         database.Migrate(db)
     
         user := entity.User{Name: "asylum29"}

@@ -31,7 +31,7 @@ func buildContainer() *dig.Container {
             panic(err)
         }
     
-        err = injector.Provide(func(db *gorm.DB) (*database.ProductRepository, error) {
+        err = injector.Provide(func(db *gorm.DB) (*database.ProductRepositoryImpl, error) {
             return database.NewProductRepository(db), nil
         })
         if err != nil {

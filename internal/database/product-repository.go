@@ -6,11 +6,15 @@ import (
     "workplace/internal/entity"
 )
 
-type ProductRepository struct {
+type ProductRepository interface {
+    GetProductsLikeName(name string) []entity.Product
+}
+
+type ProductRepositoryImpl struct {
     database *gorm.DB
 }
 
-func (repository *ProductRepository) GetProductsLikeName(name string) []entity.Product {
+func (repository *ProductRepositoryImpl) GetProductsLikeName(name string) []entity.Product {
     var products []entity.Product
     repository.
         database.
@@ -20,6 +24,6 @@ func (repository *ProductRepository) GetProductsLikeName(name string) []entity.P
     return products
 }
 
-func NewProductRepository(database *gorm.DB) *ProductRepository {
-    return &ProductRepository{database: database}
+func NewProductRepository(database *gorm.DB) *ProductRepositoryImpl {
+    return &ProductRepositoryImpl{database: database}
 }
