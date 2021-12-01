@@ -3,6 +3,7 @@ package gen
 import (
     "context"
     "fmt"
+    "github.com/go-redis/redis"
     "gorm.io/gorm"
     "time"
     "workplace/internal/entity"
@@ -26,9 +27,10 @@ func (s *TestService) Do(ctx context.Context, req *Request) (*Response, error) {
     response.Message = fmt.Sprintf("Hello, %s%s", req.GetName(), beautiful)
 
     container := injector.GetContainer()
-    container.Invoke(func(db *gorm.DB) {
-        log := entity.GrpcLog{Message: req.GetName()}
-        db.Create(&log)
+    container.Invoke(func(db *gorm.DB, rc *redis.Client) {
+        name := req.GetName()
+        db.Create(&entity.GrpcLog{Message: name})
+        rc.Set("grpc-redis", name, 60 * time.Second)
     })
 
     time.Sleep(5 * time.Second)

@@ -1,11 +1,13 @@
 package injector
 
 import (
+    "github.com/go-redis/redis"
     "go.uber.org/dig"
     "gorm.io/gorm"
     "sync"
     "workplace/internal/config"
     "workplace/internal/database"
+    "workplace/internal/services"
 )
 
 var (
@@ -21,7 +23,16 @@ func buildContainer() *dig.Container {
         if err != nil {
             panic(err)
         }
-    
+
+        err = injector.Provide(func(config *config.Configuration) (*redis.Client, error) {
+            client, err := services.GetRedisClient(config)
+
+            return client, err
+        })
+        if err != nil {
+            panic(err)
+        }
+
         err = injector.Provide(func(config *config.Configuration) (*gorm.DB, error) {
             db, err := database.GetConnection(config)
         
@@ -30,7 +41,7 @@ func buildContainer() *dig.Container {
         if err != nil {
             panic(err)
         }
-    
+
         err = injector.Provide(func(db *gorm.DB) (*database.ProductRepositoryImpl, error) {
             return database.NewProductRepository(db), nil
         })
@@ -38,7 +49,7 @@ func buildContainer() *dig.Container {
             panic(err)
         }
     })
-    
+
     return injector
 }
 
