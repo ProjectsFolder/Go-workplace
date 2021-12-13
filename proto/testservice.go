@@ -5,7 +5,6 @@ import (
     "fmt"
     "github.com/go-redis/redis"
     "gorm.io/gorm"
-    "log"
     "time"
     "workplace/internal/entity"
     "workplace/internal/injector"
@@ -33,9 +32,7 @@ func (s *TestService) Do(ctx context.Context, req *Request) (*Response, error) {
         name := req.GetName()
         db.Create(&entity.GrpcLog{Message: name})
         rc.Set("grpc-redis", name, 60 * time.Second)
-        if err := logger.Log(name); err != nil {
-            log.Println("Unable to write log:", err)
-        }
+        logger.Log(name)
     })
 
     time.Sleep(5 * time.Second)
