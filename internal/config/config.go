@@ -12,6 +12,7 @@ type Configuration struct {
     GrpcHost string `yaml:"grpc_host"`
     GrpcPort string `yaml:"grpc_port"`
     RedisUrl string `yaml:"redis_url"`
+    LogPath  string `yaml:"log_path"`
 }
 
 var (

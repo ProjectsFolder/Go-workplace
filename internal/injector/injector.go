@@ -48,6 +48,13 @@ func buildContainer() *dig.Container {
         if err != nil {
             panic(err)
         }
+    
+        err = injector.Provide(func(config *config.Configuration) (*services.Logger, error) {
+            return services.CreateLogger(config), nil
+        })
+        if err != nil {
+            panic(err)
+        }
     })
 
     return injector
