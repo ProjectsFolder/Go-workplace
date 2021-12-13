@@ -8,11 +8,13 @@ import (
 )
 
 type Configuration struct {
-    DbDsn    string `yaml:"database_dsn"`
-    GrpcHost string `yaml:"grpc_host"`
-    GrpcPort string `yaml:"grpc_port"`
-    RedisUrl string `yaml:"redis_url"`
-    LogPath  string `yaml:"log_path"`
+    DbDsn         string `yaml:"database_dsn"`
+    GrpcHost      string `yaml:"grpc_host"`
+    GrpcPort      string `yaml:"grpc_port"`
+    RedisUrl      string `yaml:"redis_url"`
+    LogPath       string `yaml:"log_path"`
+    RotateLogPath string `yaml:"rotate_log_path"`
+    HttpPort      string `yaml:"http_port"`
 }
 
 var (
