@@ -15,6 +15,7 @@ type Configuration struct {
     LogPath       string `yaml:"log_path"`
     RotateLogPath string `yaml:"rotate_log_path"`
     HttpPort      string `yaml:"http_port"`
+    ApiToken      string `yaml:"api_token"`
 }
 
 var (

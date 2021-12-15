@@ -6,7 +6,9 @@ import (
     "log"
     "time"
     "workplace/internal/config"
-    controllerTest "workplace/internal/controller/test"
+    productController "workplace/internal/controller/product"
+    testController "workplace/internal/controller/test"
+    httpMiddleware "workplace/internal/http/middleware"
 )
 
 func main() {
@@ -24,7 +26,11 @@ func main() {
     gin.DefaultWriter = rl
 
     router := gin.Default()
-    router.GET("/test/*id", controllerTest.Test)
+    v1 := router.Group("/v1", httpMiddleware.TokenRequiredMiddleware())
+    {
+        v1.GET("/test/*id", testController.Test)
+        v1.POST("/product/create", productController.Create)
+    }
 
     err = router.Run(":" + cfg.HttpPort)
     if err != nil {

@@ -8,6 +8,7 @@ import (
     "net/http"
     "strings"
     "time"
+    httpResponse "workplace/internal/http/response"
     "workplace/internal/injector"
     "workplace/internal/services"
 )
@@ -17,7 +18,7 @@ func Test(context *gin.Context) {
     id := strings.Replace(context.Param("id"), "/", "", 1)
     if len(val) == 0 {
         log.Println("required value query param")
-        context.String(http.StatusBadRequest, "wrong parameters")
+        context.JSON(http.StatusBadRequest, httpResponse.Error("Wrong parameters"))
     } else {
         go func() {
             container := injector.GetContainer()
@@ -27,8 +28,8 @@ func Test(context *gin.Context) {
             })
         }()
 
-        context.JSON(http.StatusOK, gin.H{
+        context.JSON(http.StatusOK, httpResponse.Success(gin.H{
             "message": fmt.Sprintf("Hello, %s-%s!", val, id),
-        })
+        }))
     }
 }
