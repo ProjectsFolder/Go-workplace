@@ -17,6 +17,12 @@ import (
 type ProductRepositoryMock struct {
 	t minimock.Tester
 
+	funcGetProducts          func(limit int, offset int) (pa1 []entity.Product, i1 int64)
+	inspectFuncGetProducts   func(limit int, offset int)
+	afterGetProductsCounter  uint64
+	beforeGetProductsCounter uint64
+	GetProductsMock          mProductRepositoryMockGetProducts
+
 	funcGetProductsLikeName          func(name string) (pa1 []entity.Product)
 	inspectFuncGetProductsLikeName   func(name string)
 	afterGetProductsLikeNameCounter  uint64
@@ -31,10 +37,230 @@ func NewProductRepositoryMock(t minimock.Tester) *ProductRepositoryMock {
 		controller.RegisterMocker(m)
 	}
 
+	m.GetProductsMock = mProductRepositoryMockGetProducts{mock: m}
+	m.GetProductsMock.callArgs = []*ProductRepositoryMockGetProductsParams{}
+
 	m.GetProductsLikeNameMock = mProductRepositoryMockGetProductsLikeName{mock: m}
 	m.GetProductsLikeNameMock.callArgs = []*ProductRepositoryMockGetProductsLikeNameParams{}
 
 	return m
+}
+
+type mProductRepositoryMockGetProducts struct {
+	mock               *ProductRepositoryMock
+	defaultExpectation *ProductRepositoryMockGetProductsExpectation
+	expectations       []*ProductRepositoryMockGetProductsExpectation
+
+	callArgs []*ProductRepositoryMockGetProductsParams
+	mutex    sync.RWMutex
+}
+
+// ProductRepositoryMockGetProductsExpectation specifies expectation struct of the ProductRepository.GetProducts
+type ProductRepositoryMockGetProductsExpectation struct {
+	mock    *ProductRepositoryMock
+	params  *ProductRepositoryMockGetProductsParams
+	results *ProductRepositoryMockGetProductsResults
+	Counter uint64
+}
+
+// ProductRepositoryMockGetProductsParams contains parameters of the ProductRepository.GetProducts
+type ProductRepositoryMockGetProductsParams struct {
+	limit  int
+	offset int
+}
+
+// ProductRepositoryMockGetProductsResults contains results of the ProductRepository.GetProducts
+type ProductRepositoryMockGetProductsResults struct {
+	pa1 []entity.Product
+	i1  int64
+}
+
+// Expect sets up expected params for ProductRepository.GetProducts
+func (mmGetProducts *mProductRepositoryMockGetProducts) Expect(limit int, offset int) *mProductRepositoryMockGetProducts {
+	if mmGetProducts.mock.funcGetProducts != nil {
+		mmGetProducts.mock.t.Fatalf("ProductRepositoryMock.GetProducts mock is already set by Set")
+	}
+
+	if mmGetProducts.defaultExpectation == nil {
+		mmGetProducts.defaultExpectation = &ProductRepositoryMockGetProductsExpectation{}
+	}
+
+	mmGetProducts.defaultExpectation.params = &ProductRepositoryMockGetProductsParams{limit, offset}
+	for _, e := range mmGetProducts.expectations {
+		if minimock.Equal(e.params, mmGetProducts.defaultExpectation.params) {
+			mmGetProducts.mock.t.Fatalf("Expectation set by When has same params: %#v", *mmGetProducts.defaultExpectation.params)
+		}
+	}
+
+	return mmGetProducts
+}
+
+// Inspect accepts an inspector function that has same arguments as the ProductRepository.GetProducts
+func (mmGetProducts *mProductRepositoryMockGetProducts) Inspect(f func(limit int, offset int)) *mProductRepositoryMockGetProducts {
+	if mmGetProducts.mock.inspectFuncGetProducts != nil {
+		mmGetProducts.mock.t.Fatalf("Inspect function is already set for ProductRepositoryMock.GetProducts")
+	}
+
+	mmGetProducts.mock.inspectFuncGetProducts = f
+
+	return mmGetProducts
+}
+
+// Return sets up results that will be returned by ProductRepository.GetProducts
+func (mmGetProducts *mProductRepositoryMockGetProducts) Return(pa1 []entity.Product, i1 int64) *ProductRepositoryMock {
+	if mmGetProducts.mock.funcGetProducts != nil {
+		mmGetProducts.mock.t.Fatalf("ProductRepositoryMock.GetProducts mock is already set by Set")
+	}
+
+	if mmGetProducts.defaultExpectation == nil {
+		mmGetProducts.defaultExpectation = &ProductRepositoryMockGetProductsExpectation{mock: mmGetProducts.mock}
+	}
+	mmGetProducts.defaultExpectation.results = &ProductRepositoryMockGetProductsResults{pa1, i1}
+	return mmGetProducts.mock
+}
+
+//Set uses given function f to mock the ProductRepository.GetProducts method
+func (mmGetProducts *mProductRepositoryMockGetProducts) Set(f func(limit int, offset int) (pa1 []entity.Product, i1 int64)) *ProductRepositoryMock {
+	if mmGetProducts.defaultExpectation != nil {
+		mmGetProducts.mock.t.Fatalf("Default expectation is already set for the ProductRepository.GetProducts method")
+	}
+
+	if len(mmGetProducts.expectations) > 0 {
+		mmGetProducts.mock.t.Fatalf("Some expectations are already set for the ProductRepository.GetProducts method")
+	}
+
+	mmGetProducts.mock.funcGetProducts = f
+	return mmGetProducts.mock
+}
+
+// When sets expectation for the ProductRepository.GetProducts which will trigger the result defined by the following
+// Then helper
+func (mmGetProducts *mProductRepositoryMockGetProducts) When(limit int, offset int) *ProductRepositoryMockGetProductsExpectation {
+	if mmGetProducts.mock.funcGetProducts != nil {
+		mmGetProducts.mock.t.Fatalf("ProductRepositoryMock.GetProducts mock is already set by Set")
+	}
+
+	expectation := &ProductRepositoryMockGetProductsExpectation{
+		mock:   mmGetProducts.mock,
+		params: &ProductRepositoryMockGetProductsParams{limit, offset},
+	}
+	mmGetProducts.expectations = append(mmGetProducts.expectations, expectation)
+	return expectation
+}
+
+// Then sets up ProductRepository.GetProducts return parameters for the expectation previously defined by the When method
+func (e *ProductRepositoryMockGetProductsExpectation) Then(pa1 []entity.Product, i1 int64) *ProductRepositoryMock {
+	e.results = &ProductRepositoryMockGetProductsResults{pa1, i1}
+	return e.mock
+}
+
+// GetProducts implements database.ProductRepository
+func (mmGetProducts *ProductRepositoryMock) GetProducts(limit int, offset int) (pa1 []entity.Product, i1 int64) {
+	mm_atomic.AddUint64(&mmGetProducts.beforeGetProductsCounter, 1)
+	defer mm_atomic.AddUint64(&mmGetProducts.afterGetProductsCounter, 1)
+
+	if mmGetProducts.inspectFuncGetProducts != nil {
+		mmGetProducts.inspectFuncGetProducts(limit, offset)
+	}
+
+	mm_params := &ProductRepositoryMockGetProductsParams{limit, offset}
+
+	// Record call args
+	mmGetProducts.GetProductsMock.mutex.Lock()
+	mmGetProducts.GetProductsMock.callArgs = append(mmGetProducts.GetProductsMock.callArgs, mm_params)
+	mmGetProducts.GetProductsMock.mutex.Unlock()
+
+	for _, e := range mmGetProducts.GetProductsMock.expectations {
+		if minimock.Equal(e.params, mm_params) {
+			mm_atomic.AddUint64(&e.Counter, 1)
+			return e.results.pa1, e.results.i1
+		}
+	}
+
+	if mmGetProducts.GetProductsMock.defaultExpectation != nil {
+		mm_atomic.AddUint64(&mmGetProducts.GetProductsMock.defaultExpectation.Counter, 1)
+		mm_want := mmGetProducts.GetProductsMock.defaultExpectation.params
+		mm_got := ProductRepositoryMockGetProductsParams{limit, offset}
+		if mm_want != nil && !minimock.Equal(*mm_want, mm_got) {
+			mmGetProducts.t.Errorf("ProductRepositoryMock.GetProducts got unexpected parameters, want: %#v, got: %#v%s\n", *mm_want, mm_got, minimock.Diff(*mm_want, mm_got))
+		}
+
+		mm_results := mmGetProducts.GetProductsMock.defaultExpectation.results
+		if mm_results == nil {
+			mmGetProducts.t.Fatal("No results are set for the ProductRepositoryMock.GetProducts")
+		}
+		return (*mm_results).pa1, (*mm_results).i1
+	}
+	if mmGetProducts.funcGetProducts != nil {
+		return mmGetProducts.funcGetProducts(limit, offset)
+	}
+	mmGetProducts.t.Fatalf("Unexpected call to ProductRepositoryMock.GetProducts. %v %v", limit, offset)
+	return
+}
+
+// GetProductsAfterCounter returns a count of finished ProductRepositoryMock.GetProducts invocations
+func (mmGetProducts *ProductRepositoryMock) GetProductsAfterCounter() uint64 {
+	return mm_atomic.LoadUint64(&mmGetProducts.afterGetProductsCounter)
+}
+
+// GetProductsBeforeCounter returns a count of ProductRepositoryMock.GetProducts invocations
+func (mmGetProducts *ProductRepositoryMock) GetProductsBeforeCounter() uint64 {
+	return mm_atomic.LoadUint64(&mmGetProducts.beforeGetProductsCounter)
+}
+
+// Calls returns a list of arguments used in each call to ProductRepositoryMock.GetProducts.
+// The list is in the same order as the calls were made (i.e. recent calls have a higher index)
+func (mmGetProducts *mProductRepositoryMockGetProducts) Calls() []*ProductRepositoryMockGetProductsParams {
+	mmGetProducts.mutex.RLock()
+
+	argCopy := make([]*ProductRepositoryMockGetProductsParams, len(mmGetProducts.callArgs))
+	copy(argCopy, mmGetProducts.callArgs)
+
+	mmGetProducts.mutex.RUnlock()
+
+	return argCopy
+}
+
+// MinimockGetProductsDone returns true if the count of the GetProducts invocations corresponds
+// the number of defined expectations
+func (m *ProductRepositoryMock) MinimockGetProductsDone() bool {
+	for _, e := range m.GetProductsMock.expectations {
+		if mm_atomic.LoadUint64(&e.Counter) < 1 {
+			return false
+		}
+	}
+
+	// if default expectation was set then invocations count should be greater than zero
+	if m.GetProductsMock.defaultExpectation != nil && mm_atomic.LoadUint64(&m.afterGetProductsCounter) < 1 {
+		return false
+	}
+	// if func was set then invocations count should be greater than zero
+	if m.funcGetProducts != nil && mm_atomic.LoadUint64(&m.afterGetProductsCounter) < 1 {
+		return false
+	}
+	return true
+}
+
+// MinimockGetProductsInspect logs each unmet expectation
+func (m *ProductRepositoryMock) MinimockGetProductsInspect() {
+	for _, e := range m.GetProductsMock.expectations {
+		if mm_atomic.LoadUint64(&e.Counter) < 1 {
+			m.t.Errorf("Expected call to ProductRepositoryMock.GetProducts with params: %#v", *e.params)
+		}
+	}
+
+	// if default expectation was set then invocations count should be greater than zero
+	if m.GetProductsMock.defaultExpectation != nil && mm_atomic.LoadUint64(&m.afterGetProductsCounter) < 1 {
+		if m.GetProductsMock.defaultExpectation.params == nil {
+			m.t.Error("Expected call to ProductRepositoryMock.GetProducts")
+		} else {
+			m.t.Errorf("Expected call to ProductRepositoryMock.GetProducts with params: %#v", *m.GetProductsMock.defaultExpectation.params)
+		}
+	}
+	// if func was set then invocations count should be greater than zero
+	if m.funcGetProducts != nil && mm_atomic.LoadUint64(&m.afterGetProductsCounter) < 1 {
+		m.t.Error("Expected call to ProductRepositoryMock.GetProducts")
+	}
 }
 
 type mProductRepositoryMockGetProductsLikeName struct {
@@ -255,6 +481,8 @@ func (m *ProductRepositoryMock) MinimockGetProductsLikeNameInspect() {
 // MinimockFinish checks that all mocked methods have been called the expected number of times
 func (m *ProductRepositoryMock) MinimockFinish() {
 	if !m.minimockDone() {
+		m.MinimockGetProductsInspect()
+
 		m.MinimockGetProductsLikeNameInspect()
 		m.t.FailNow()
 	}
@@ -279,5 +507,6 @@ func (m *ProductRepositoryMock) MinimockWait(timeout mm_time.Duration) {
 func (m *ProductRepositoryMock) minimockDone() bool {
 	done := true
 	return done &&
+		m.MinimockGetProductsDone() &&
 		m.MinimockGetProductsLikeNameDone()
 }
