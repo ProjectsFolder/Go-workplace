@@ -29,7 +29,14 @@ func main() {
     v1 := router.Group("/v1", httpMiddleware.TokenRequiredMiddleware())
     {
         v1.GET("/test/*id", testController.Test)
-        v1.POST("/product/create", productController.Create)
+        product := v1.Group("/product")
+        {
+            product.GET("/", productController.List)
+            product.GET("/:id", productController.View)
+            product.POST("/", productController.Create)
+            product.PUT("/:id", productController.Update)
+            product.DELETE("/:id", productController.Delete)
+        }
     }
 
     err = router.Run(":" + cfg.HttpPort)

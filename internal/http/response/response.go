@@ -1,16 +1,14 @@
 package http_response
 
-import "github.com/gin-gonic/gin"
-
-func Success(data map[string]interface{}) map[string]interface{} {
-    return gin.H{
+func Success(data interface{}) map[string]interface{} {
+    return map[string]interface{}{
         "success": true,
         "data": data,
     }
 }
 
 func Error(message string) map[string]interface{} {
-    return gin.H{
+    return map[string]interface{}{
         "success": false,
         "message": message,
     }
