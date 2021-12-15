@@ -13,7 +13,7 @@ import (
 
 func main() {
     cfg := config.GetConfig()
-    
+
     client := &http.Client{
         Timeout: 30 * time.Second,
     }
@@ -32,11 +32,11 @@ func main() {
     if err != nil {
         log.Fatalln(err)
     }
-    
+
     bodyBytes, _ := io.ReadAll(response.Body)
     var result dto.ProductsResponse
     json.Unmarshal(bodyBytes, &result)
-    
+
     fmt.Println(result.Success)
     fmt.Println(result.Message)
     for _, product := range result.Data.Products {

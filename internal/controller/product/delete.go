@@ -1,7 +1,6 @@
 package controller_product
 
 import (
-    "errors"
     "github.com/gin-gonic/gin"
     "gorm.io/gorm"
     "net/http"
@@ -25,11 +24,9 @@ func Delete(context *gin.Context) {
     var dbError error
     injector.GetContainer().Invoke(func(db *gorm.DB) {
         var dbProduct entity.Product
-        db.First(&dbProduct, id)
-        if (entity.Product{}) != dbProduct {
+        dbError = db.First(&dbProduct, id).Error
+        if dbError == nil {
             dbError = db.Delete(&dbProduct).Error
-        } else {
-            dbError = errors.New("product not found")
         }
     })
 

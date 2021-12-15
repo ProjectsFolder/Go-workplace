@@ -1,7 +1,6 @@
 package controller_product
 
 import (
-    "errors"
     "github.com/gin-gonic/gin"
     "gorm.io/gorm"
     "net/http"
@@ -32,15 +31,13 @@ func Update(context *gin.Context) {
     var dbError error
     dbProduct := entity.Product{}
     injector.GetContainer().Invoke(func(db *gorm.DB) {
-        db.First(&dbProduct, id)
-        if (entity.Product{}) != dbProduct {
+        dbError = db.First(&dbProduct, id).Error
+        if dbError == nil {
             dbError = db.Model(&dbProduct).Updates(entity.Product{
                 Name: reqProduct.Name,
                 Price: reqProduct.Price,
                 UserRefer: reqProduct.UserRefer,
             }).Error
-        } else {
-            dbError = errors.New("product not found")
         }
     })
 
