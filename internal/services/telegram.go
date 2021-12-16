@@ -41,7 +41,7 @@ func (t *Telegram) Log(v ...string) {
             message += " " + arg
         }
 
-        chunks := stringUtils.StringChunk(message, TelegramMessageMaxLength)
+        chunks := stringUtils.ChunkSplit(message, TelegramMessageMaxLength)
         for _, chunk := range chunks {
             msg := tgbotapi.NewMessage(t.chatId, chunk)
             t.bot.Send(msg)

@@ -1,6 +1,6 @@
 package stringUtils
 
-func StringChunk(s string, l int) []string {
+func ChunkSplit(s string, l int) []string {
     var result []string
     for len(s) > 0 {
         var length int
