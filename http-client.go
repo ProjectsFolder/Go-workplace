@@ -8,7 +8,7 @@ import (
     "net/http"
     "time"
     "workplace/internal/config"
-    "workplace/internal/dto"
+    "workplace/internal/dto/product"
 )
 
 func main() {

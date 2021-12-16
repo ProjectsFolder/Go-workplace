@@ -1,11 +1,12 @@
-package controller_product
+package productController
 
 import (
     "github.com/gin-gonic/gin"
     "net/http"
     "workplace/internal/database"
     "workplace/internal/dto"
-    httpResponse "workplace/internal/http/response"
+    productDto "workplace/internal/dto/product"
+    "workplace/internal/http/response"
     "workplace/internal/injector"
 )
 
@@ -16,16 +17,16 @@ func List(context *gin.Context) {
         return
     }
 
-    var response dto.Products
+    var response productDto.Products
     response.Page = pager.Page
     response.PerPage = pager.PerPage
     injector.GetContainer().Invoke(func(repository database.ProductRepository) {
         offset := pager.PerPage * (pager.Page - 1)
         products, total := repository.GetProducts(pager.PerPage, offset)
         response.Total = total
-        response.Products = make([]dto.Product, len(products))
+        response.Products = make([]productDto.Product, len(products))
         for key, product := range products {
-            response.Products[key] = dto.Product{
+            response.Products[key] = productDto.Product{
                 Id: product.ID,
                 Name: product.Name,
                 Price: product.Price,

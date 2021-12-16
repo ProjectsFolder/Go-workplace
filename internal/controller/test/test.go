@@ -1,4 +1,4 @@
-package controller_test
+package testController
 
 import (
     "fmt"
@@ -8,7 +8,7 @@ import (
     "net/http"
     "strings"
     "time"
-    httpResponse "workplace/internal/http/response"
+    "workplace/internal/http/response"
     "workplace/internal/injector"
     "workplace/internal/services"
 )

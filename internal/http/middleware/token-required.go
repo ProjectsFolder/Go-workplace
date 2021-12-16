@@ -1,9 +1,9 @@
-package http_middleware
+package httpMiddleware
 
 import (
     "github.com/gin-gonic/gin"
     "workplace/internal/config"
-    httpResponse "workplace/internal/http/response"
+    "workplace/internal/http/response"
     "workplace/internal/injector"
 )
 

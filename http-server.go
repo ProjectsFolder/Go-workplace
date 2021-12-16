@@ -6,9 +6,9 @@ import (
     "log"
     "time"
     "workplace/internal/config"
-    productController "workplace/internal/controller/product"
-    testController "workplace/internal/controller/test"
-    httpMiddleware "workplace/internal/http/middleware"
+    "workplace/internal/controller/product"
+    "workplace/internal/controller/test"
+    "workplace/internal/http/middleware"
 )
 
 func main() {

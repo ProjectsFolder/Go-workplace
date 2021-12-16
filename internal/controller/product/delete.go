@@ -1,4 +1,4 @@
-package controller_product
+package productController
 
 import (
     "github.com/gin-gonic/gin"
@@ -6,7 +6,7 @@ import (
     "net/http"
     "strconv"
     "workplace/internal/entity"
-    httpResponse "workplace/internal/http/response"
+    "workplace/internal/http/response"
     "workplace/internal/injector"
 )
 

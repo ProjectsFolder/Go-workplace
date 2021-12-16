@@ -1,13 +1,13 @@
-package controller_product
+package productController
 
 import (
     "github.com/gin-gonic/gin"
     "gorm.io/gorm"
     "net/http"
     "strconv"
-    "workplace/internal/dto"
+    "workplace/internal/dto/product"
     "workplace/internal/entity"
-    httpResponse "workplace/internal/http/response"
+    "workplace/internal/http/response"
     "workplace/internal/injector"
 )
 
