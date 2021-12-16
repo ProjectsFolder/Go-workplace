@@ -6,3 +6,7 @@ log_path: "./log/log.txt"
 rotate_log_path: "./log/%Y-%m-%d.log"
 http_port: "8081"
 api_token: "api_token"
+
+api_billing_url: "api_billing_url"
+api_billing_user: "api_billing_user"
+api_billing_password: "api_billing_password"

@@ -6,9 +6,13 @@ import (
     "io"
     "log"
     "net/http"
+    "os"
+    "strconv"
     "time"
     "workplace/internal/config"
     "workplace/internal/dto/product"
+    "workplace/internal/injector"
+    "workplace/internal/services"
 )
 
 func main() {
@@ -49,4 +53,22 @@ func main() {
             ),
         )
     }
+    
+    injector.GetContainer().Invoke(func(billing services.BillingProviderInterface) {
+        contractId, _ := strconv.Atoi(os.Args[1])
+        contract, err := billing.GetContract(contractId)
+        if err != nil {
+            log.Fatalln(err)
+        }
+        if contract != nil {
+            fmt.Println(fmt.Sprintf(
+                "id: %d; title: %s; balance: %f; house_id: %s",
+                contract.Id,
+                contract.Title,
+                contract.Balance,
+                contract.HouseId,
+                ),
+            )
+        }
+    })
 }
