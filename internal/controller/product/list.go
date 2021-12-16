@@ -19,7 +19,7 @@ func List(context *gin.Context) {
     var response dto.Products
     response.Page = pager.Page
     response.PerPage = pager.PerPage
-    injector.GetContainer().Invoke(func(repository *database.ProductRepositoryImpl) {
+    injector.GetContainer().Invoke(func(repository database.ProductRepository) {
         offset := pager.PerPage * (pager.Page - 1)
         products, total := repository.GetProducts(pager.PerPage, offset)
         response.Total = total
