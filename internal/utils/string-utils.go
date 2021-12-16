@@ -1,8 +1,15 @@
 package stringUtils
 
-import "math"
+import (
+    "errors"
+    "math"
+)
 
-func ChunkSplit(s string, l int) []string {
+func ChunkSplit(s string, l int) ([]string, error) {
+    if l <= 0 {
+        return nil, errors.New("length should be > 0")
+    }
+
     i := 0
     result := make([]string, int(math.Ceil(float64(len(s)) / float64(l))))
     for len(s) > 0 {
@@ -18,5 +25,5 @@ func ChunkSplit(s string, l int) []string {
         s = s[length:]
     }
 
-    return result
+    return result, nil
 }
