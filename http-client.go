@@ -17,7 +17,7 @@ func main() {
        }
        if contract != nil {
            fmt.Println(fmt.Sprintf(
-               "id: %d; title: %s; balance: %f; house_id: %s",
+               "id: %d; title: %s; balance: %f; house_id: %d",
                contract.Id,
                contract.Title,
                contract.Balance,
