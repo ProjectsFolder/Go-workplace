@@ -10,3 +10,6 @@ api_token: "api_token"
 api_billing_url: "api_billing_url"
 api_billing_user: "api_billing_user"
 api_billing_password: "api_billing_password"
+
+api_telegram_log_bot_key: "api_telegram_log_bot_key"
+api_telegram_log_bot_chat_id: "api_telegram_log_bot_chat_id"

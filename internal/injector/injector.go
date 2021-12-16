@@ -27,7 +27,12 @@ func buildContainer() *dig.Container {
         }
 
         err = injector.Provide(func(config *config.Configuration) (*redis.Client, error) {
-            client, err := services.GetRedisClient(config)
+            client := redis.NewClient(&redis.Options{
+                Addr: config.RedisUrl,
+                Password: "",
+                DB: 0,
+            })
+            _, err = client.Ping().Result()
 
             return client, err
         })
@@ -67,6 +72,13 @@ func buildContainer() *dig.Container {
                 config.ApiBillingUser,
                 config.ApiBillingPassword,
             ), nil
+        })
+        if err != nil {
+            panic(err)
+        }
+
+        err = injector.Provide(func(config *config.Configuration) (*services.Telegram, error) {
+            return services.NewTelegramClient(config), nil
         })
         if err != nil {
             panic(err)
