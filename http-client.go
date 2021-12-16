@@ -13,7 +13,7 @@ func main() {
        contractId, _ := strconv.Atoi(os.Args[1])
        contract, err := billing.GetContract(contractId)
        if err != nil {
-           telegram.Log("billing get-contract exception:", err.Error())
+           telegram.LogAsync("billing get-contract exception:", err.Error())
        }
        if contract != nil {
            fmt.Println(fmt.Sprintf(

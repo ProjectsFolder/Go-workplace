@@ -19,7 +19,7 @@ func CreateLogger(config *config.Configuration) *Logger {
     return &Logger{path: config.LogPath}
 }
 
-func (l *Logger) Log(content string) {
+func (l *Logger) LogAsync(content string) {
     go func () {
         l.mutex.Lock()
         defer l.mutex.Unlock()

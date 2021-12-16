@@ -24,7 +24,7 @@ func Test(context *gin.Context) {
             container := injector.GetContainer()
             container.Invoke(func(rc *redis.Client, logger *services.Logger) {
                 rc.Set("http-redis", val + "-" + id, 60 * time.Second)
-                logger.Log(val + "-" + id)
+                logger.LogAsync(val + "-" + id)
             })
         }()
 

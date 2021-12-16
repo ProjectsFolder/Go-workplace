@@ -32,7 +32,7 @@ func NewTelegramClient(configuration *config.Configuration) *Telegram {
     }
 }
 
-func (t *Telegram) Log(v ...string) {
+func (t *Telegram) LogAsync(v ...string) {
     go func() {
         now := time.Now()
         timeFormatted := now.Format("02.01.2006 15:04:05")

@@ -32,7 +32,7 @@ func (s *TestService) Do(ctx context.Context, req *Request) (*Response, error) {
         name := req.GetName()
         db.Create(&entity.GrpcLog{Message: name})
         rc.Set("grpc-redis", name, 60 * time.Second)
-        logger.Log(name)
+        logger.LogAsync(name)
     })
 
     time.Sleep(5 * time.Second)
