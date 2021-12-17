@@ -1,11 +1,10 @@
 package services
 
 import (
-    "fmt"
     tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
     "log"
     "strconv"
-    "time"
+    "sync"
     "workplace/internal/config"
     stringUtils "workplace/internal/utils"
 )
@@ -15,6 +14,7 @@ const TelegramMessageMaxLength = 4096
 type Telegram struct {
     bot *tgbotapi.BotAPI
     chatId int64
+    mutex sync.Mutex
 }
 
 func NewTelegramClient(configuration *config.Configuration) *Telegram {
@@ -34,17 +34,39 @@ func NewTelegramClient(configuration *config.Configuration) *Telegram {
 
 func (t *Telegram) LogAsync(v ...string) {
     go func() {
-        now := time.Now()
-        timeFormatted := now.Format("02.01.2006 15:04:05")
-        message := fmt.Sprintf("[%s]: ", timeFormatted)
-        for _, arg := range v {
-            message += " " + arg
-        }
-
-        chunks, _ := stringUtils.ChunkSplit(message, TelegramMessageMaxLength)
-        for _, chunk := range chunks {
-            msg := tgbotapi.NewMessage(t.chatId, chunk)
-            t.bot.Send(msg)
-        }
+        t.Log(v...)
     }()
+}
+
+func (t *Telegram) Log(v ...string) error {
+    var message = ""
+    for argNum, arg := range v {
+        if argNum > 0 {
+            message += " "
+        }
+        message += arg
+    }
+    
+    chunks, _ := stringUtils.ChunkSplit(message, TelegramMessageMaxLength)
+    for _, chunk := range chunks {
+        msg := tgbotapi.NewMessage(t.chatId, chunk)
+        _, err := t.bot.Send(msg)
+        if err != nil {
+            return err
+        }
+    }
+    
+    return nil
+}
+
+func (t *Telegram) Write(p []byte) (int, error) {
+    t.mutex.Lock()
+    defer t.mutex.Unlock()
+
+    err := t.Log(string(p))
+    if err != nil {
+        return 0, err
+    }
+
+    return len(p), nil
 }

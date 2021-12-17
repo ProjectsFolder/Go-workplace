@@ -10,7 +10,6 @@ import (
     "time"
     "workplace/internal/http/response"
     "workplace/internal/injector"
-    "workplace/internal/services"
 )
 
 func Test(context *gin.Context) {
@@ -22,9 +21,9 @@ func Test(context *gin.Context) {
     } else {
         go func() {
             container := injector.GetContainer()
-            container.Invoke(func(rc *redis.Client, logger *services.Logger) {
+            container.Invoke(func(rc *redis.Client, logger *log.Logger) {
                 rc.Set("http-redis", val + "-" + id, 60 * time.Second)
-                logger.LogAsync(val + "-" + id)
+                logger.Println(val + "-" + id)
             })
         }()
 

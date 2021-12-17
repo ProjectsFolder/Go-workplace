@@ -4,6 +4,7 @@ import (
     "github.com/go-redis/redis"
     "go.uber.org/dig"
     "gorm.io/gorm"
+    "log"
     "net/http"
     "sync"
     "time"
@@ -55,13 +56,6 @@ func buildContainer() *dig.Container {
         if err != nil {
             panic(err)
         }
-
-        err = injector.Provide(func(config *config.Configuration) (*services.Logger, error) {
-            return services.CreateLogger(config), nil
-        })
-        if err != nil {
-            panic(err)
-        }
     
         err = injector.Provide(func(config *config.Configuration) (services.BillingProviderInterface, error) {
             client := &http.Client{Timeout: 30 * time.Second}
@@ -80,6 +74,24 @@ func buildContainer() *dig.Container {
         err = injector.Provide(func(config *config.Configuration) (*services.Telegram, error) {
             return services.NewTelegramClient(config), nil
         })
+        if err != nil {
+            panic(err)
+        }
+
+        createLogger := func(telegram *services.Telegram) *log.Logger {
+            return log.New(telegram, "", log.Ldate|log.Ltime|log.Lshortfile)
+        }
+
+        err = injector.Provide(func(telegram *services.Telegram) (*log.Logger, error) {
+           return createLogger(telegram), nil
+        })
+        if err != nil {
+           panic(err)
+        }
+
+        err = injector.Provide(func(telegram *services.Telegram) (*log.Logger, error) {
+            return createLogger(telegram), nil
+        }, dig.Name("telegramLogger"))
         if err != nil {
             panic(err)
         }
