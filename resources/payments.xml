@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Statement xmlns="http://directbank.1c.ru/XMLSchema" creationDate="2021-11-26T07:22:22.691Z" formatVersion="2.2.2" id="6e413940-f894-4d29-8dbc-82720a2d5798">
+   <Sender name="АО &quot;АЛЬФА-БАНК&quot;" bic="044525593" />
+   <Recipient kpp="043360081" inn="0329156629" name="Общество с ограниченной ответственностью &quot;Тест Директ Банк&quot;" id="40702810701300009144" />
+   <Data>
+      <StatementType>0</StatementType>
+      <DateFrom>2021-08-01T00:00:00Z</DateFrom>
+      <DateTo>2021-08-31T00:00:00Z</DateTo>
+      <Account>40702810701300009144</Account>
+      <Bank>
+         <BIC>044525593</BIC>
+         <Name>АО "АЛЬФА-БАНК"</Name>
+         <CorrespAcc>30101810200000000593</CorrespAcc>
+      </Bank>
+      <OpeningBalance>100000042918.82</OpeningBalance>
+      <TotalDebits>772022.95</TotalDebits>
+      <TotalCredits>200011511.11</TotalCredits>
+      <ClosingBalance>100199282406.98</ClosingBalance>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD21820000003">
+            <PayDocRu>
+               <DocNo>91428</DocNo>
+               <DocDate>2021-08-02</DocDate>
+               <Sum>1</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Общество с ограниченнои  ответственностью "Тест Директ банк Получатель"</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г. Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету № от  Сумма 1-00 руб. В т.ч. НДС (20%): 0-17 руб.</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-02</Date>
+         <ExtID>eb855d21-7d65-4aff-a20c-c67ae89bd8e2</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218D000000A">
+            <PayDocRu>
+               <DocNo>71</DocNo>
+               <DocDate>2021-08-13</DocDate>
+               <Sum>170</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО УК"Альфа-Капитал"Д.У.</Name>
+                  <INN>7728142469</INN>
+                  <KPP>745301001</KPP>
+                  <Account>40701810301600000105</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>TEST 2</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-13</Date>
+         <ExtID>024c4886-9b57-45f9-ab05-b058883b54de</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218D0000008">
+            <PayDocRu>
+               <DocNo>70</DocNo>
+               <DocDate>2021-08-13</DocDate>
+               <Sum>160</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Акционерное общество "ДИКСИ Юг"</Name>
+                  <INN>5036045205</INN>
+                  <KPP>503601001</KPP>
+                  <Account>40702810901300013927</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>TEST</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-13</Date>
+         <ExtID>ca542edc-edb3-44ef-aec5-8ec5084df651</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218G0000004">
+            <PayDocRu>
+               <DocNo>74</DocNo>
+               <DocDate>2021-08-16</DocDate>
+               <Sum>210</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО УК"Альфа-Капитал"Д.У.</Name>
+                  <INN>7728142469</INN>
+                  <KPP>745301001</KPP>
+                  <Account>40701810301600000105</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>тест</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-16</Date>
+         <ExtID>bf6899a8-389f-4efb-abbf-eca6fa333071</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218G0000003">
+            <PayDocRu>
+               <DocNo>73</DocNo>
+               <DocDate>2021-08-16</DocDate>
+               <Sum>200</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО УК"Альфа-Капитал"Д.У.</Name>
+                  <INN>7728142469</INN>
+                  <KPP>745301001</KPP>
+                  <Account>40701810301600000105</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Тест</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-16</Date>
+         <ExtID>0456cf96-7340-4c63-824e-32f0d56d211c</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218G0000002">
+            <PayDocRu>
+               <DocNo>72</DocNo>
+               <DocDate>2021-08-16</DocDate>
+               <Sum>170</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО УК"Альфа-Капитал"Д.У.</Name>
+                  <INN>7728142469</INN>
+                  <KPP>745301001</KPP>
+                  <Account>40701810301600000105</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>TEST</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-16</Date>
+         <ExtID>6c6c17cc-c260-425f-b9f3-956243dae503</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218J000000D">
+            <PayDocRu>
+               <DocNo>96412</DocNo>
+               <DocDate>2021-08-19</DocDate>
+               <Sum>1111.11</Sum>
+               <Payer>
+                  <Name>ООО "Мир Технологий"</Name>
+                  <INN>6315016823</INN>
+                  <KPP>631501001</KPP>
+                  <Account>40702810001300013144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест ДиректБанк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО АЛЬФА-БАНК</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Code>0</Code>
+               <Purpose>тестирование+h2h</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-19</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218K0000005">
+            <PayDocRu>
+               <DocNo>141544</DocNo>
+               <DocDate>2021-08-20</DocDate>
+               <Sum>100</Sum>
+               <Payer>
+                  <Name>ООО "Тест Альфа-Линк" //Москва ул. Московская 1//</Name>
+                  <INN>7013602245</INN>
+                  <Account>40702810200000000083</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест Директ Банк" //Olkhovskaya ul,14 Moscow Russian Federation//</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО АЛЬФА-БАНК</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Code>0</Code>
+               <IncomeTypeCode>3</IncomeTypeCode>
+               <Purpose>тестированиеh2h</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-20</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="18" id="1210820MOPVX3JM 00002">
+            <BankOrder>
+               <DocNo>2</DocNo>
+               <DocDate>2021-08-20</DocDate>
+               <Sum>10000</Sum>
+               <Payer>
+                  <Name>АО "Альфа-Банк"</Name>
+                  <INN>7728168971</INN>
+                  <KPP>770801001</KPP>
+                  <Account>20202810003580000000</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Общество с ограниченной ответственностью "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                  </Bank>
+               </Payee>
+               <TransitionKind>17</TransitionKind>
+               <Purpose>test</Purpose>
+            </BankOrder>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-20</Date>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218N000000M">
+            <PayDocRu>
+               <DocNo>1984</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>1</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест Директ банк Получатель"</Name>
+                  <INN>0329156636</INN>
+                  <KPP>770101999</KPP>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г. Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата без указания назначения 1-00 руб. Без налога (НДС)</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-23</Date>
+         <ExtID>e5e999a9-8313-413c-930c-2f0165b1dd60</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218K0000003">
+            <PayDocRu>
+               <DocNo>141543</DocNo>
+               <DocDate>2021-08-20</DocDate>
+               <Sum>100</Sum>
+               <Payer>
+                  <Name>ООО "Тест Альфа-Линк" //Москва ул. Московская 1//</Name>
+                  <INN>7013602245</INN>
+                  <Account>30232810200000000178</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест Директ Банк" //Olkhovskaya ul,14 Moscow Russian Federation//</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Code>0</Code>
+               <IncomeTypeCode>3</IncomeTypeCode>
+               <Purpose>тестированиеh2h</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-23</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218K0000006">
+            <PayDocRu>
+               <DocNo>141545</DocNo>
+               <DocDate>2021-08-20</DocDate>
+               <Sum>100</Sum>
+               <Payer>
+                  <Name>ООО "Тест Альфа-Линк" //Москва ул. Московская 1//</Name>
+                  <INN>7013602245</INN>
+                  <Account>30232810000000000006</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест Директ Банк" //Olkhovskaya ul,14 Moscow Russian Federation//</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Code>0</Code>
+               <IncomeTypeCode>3</IncomeTypeCode>
+               <Purpose>тестированиеh2h</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-23</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218N0000006">
+            <PayDocRu>
+               <DocNo>169</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>200000000</Sum>
+               <Payer>
+                  <Name>Общество с ограниченной ответственностью "Мир Технологий</Name>
+                  <INN>6315016823</INN>
+                  <KPP>253701001</KPP>
+                  <Account>40702810001300013144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Общество с ограниченной ответственностью "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>773001001</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>перевод. НДС не облагается.</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-23</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218N0000001">
+            <PayDocRu>
+               <DocNo>2</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>20000</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Тест Директ банк Получатель ООО</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г. МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 20000-00 В т.ч. НДС(20%) 3333-33</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-23</Date>
+         <ExtID>f3c561e9-66c9-4f48-88c7-30eb672670f4</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218O000000O">
+            <PayDocRu>
+               <DocNo>141546</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>100</Sum>
+               <Payer>
+                  <Name>ООО "Тест Альфа-Линк" //Москва ул. Московская 1//</Name>
+                  <INN>7728168971</INN>
+                  <Account>30232810000000000006</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ООО "Тест Директ Банк" //Olkhovskaya ul,14 Moscow Russian Federation//</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО АЛЬФА-БАНК</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Code>0</Code>
+               <IncomeTypeCode>3</IncomeTypeCode>
+               <Purpose>тестированиеh2h</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>2</DC>
+         <Date>2021-08-24</Date>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218P0000003">
+            <PayDocRu>
+               <DocNo>4</DocNo>
+               <DocDate>2021-08-25</DocDate>
+               <Sum>123</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Тест Директ банк Получатель ООО</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г. МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 123-00 В т.ч. НДС(20%) 20-50</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-25</Date>
+         <ExtID>8cbfcfdb-2d27-4937-8e7a-c9af486b0777</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218Q000001D">
+            <PayDocRu>
+               <DocNo>8</DocNo>
+               <DocDate>2021-08-26</DocDate>
+               <Sum>200</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Тест Директ банк Получатель ООО</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г. МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 200-00 В т.ч. НДС(20%) 33-33</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-26</Date>
+         <ExtID>b138833c-405d-4235-a9bc-93b27d689c54</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218Q000001C">
+            <PayDocRu>
+               <DocNo>7</DocNo>
+               <DocDate>2021-08-26</DocDate>
+               <Sum>100</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Тест Директ банк Получатель ООО</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г. МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 100-00 В т.ч. НДС(20%) 16-67</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-26</Date>
+         <ExtID>796c0736-4d9e-42a7-b8ef-14d3db4a44ef</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218Q000001A">
+            <PayDocRu>
+               <DocNo>6</DocNo>
+               <DocDate>2021-08-26</DocDate>
+               <Sum>555</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>Тест Директ банк Получатель ООО</Name>
+                  <INN>0329156636</INN>
+                  <Account>40702810300000019796</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" Г. МОСКВА</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 555-00 В т.ч. НДС(20%) 92-50</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-26</Date>
+         <ExtID>70d5bda9-286d-4ad0-97b7-3b481092031b</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>02</Code>
+               <Name>Исполнен</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="18" id="1210826MOPYF6D0A00002">
+            <BankOrder>
+               <DocNo>3</DocNo>
+               <DocDate>2021-08-26</DocDate>
+               <Sum>4000</Sum>
+               <Payer>
+                  <Name>Общество с ограниченной ответственностью "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>АО "Альфа-Банк"</Name>
+                  <INN>7728168971</INN>
+                  <KPP>770801001</KPP>
+                  <Account>47423810201300000158</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <TransitionKind>17</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Комиссия за обслуживание р/с за период с 26ИЮЛ21 по 25АВГ21 Согласно тарифам Банка ООО "Тест Директ Банк"</Purpose>
+            </BankOrder>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-26</Date>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218R0000004">
+            <PayDocRu>
+               <DocNo>1</DocNo>
+               <DocDate>2021-08-27</DocDate>
+               <Sum>2400</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 2400-00</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-27</Date>
+         <ExtID>27e7dcd3-0df4-4509-8439-79efac87214f</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218R0000003">
+            <PayDocRu>
+               <DocNo>1</DocNo>
+               <DocDate>2021-08-27</DocDate>
+               <Sum>246287.65</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 246287-65</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-27</Date>
+         <ExtID>247aac89-babf-40d3-9ab5-e3b778ced7a0</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="18" id="1210828MOPYF6DAE00002">
+            <BankOrder>
+               <DocNo>3</DocNo>
+               <DocDate>2021-08-28</DocDate>
+               <Sum>70</Sum>
+               <Payer>
+                  <Name>Общество с ограниченной ответственностью "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <KPP>043360081</KPP>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>АО "Альфа-Банк"</Name>
+                  <INN>7728168971</INN>
+                  <KPP>770801001</KPP>
+                  <Account>47423810201300000158</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК"</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <TransitionKind>17</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Комиссия за переводы в рублях за период с 27АВГ21 по 27АВГ21 Согласно тарифам Банка ООО "Тест Директ Банк"</Purpose>
+            </BankOrder>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-28</Date>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218V0000008">
+            <PayDocRu>
+               <DocNo>47</DocNo>
+               <DocDate>2021-08-24</DocDate>
+               <Sum>2400</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 2400-00</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-31</Date>
+         <ExtID>9c6277e0-7b9c-44ac-879a-8aeb7a3c2442</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218V0000007">
+            <PayDocRu>
+               <DocNo>23</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>246287.65</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 246287-65</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-31</Date>
+         <ExtID>8fa9a9ce-fe0a-4c85-a04b-4d83f5458303</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218V0000003">
+            <PayDocRu>
+               <DocNo>21</DocNo>
+               <DocDate>2021-08-23</DocDate>
+               <Sum>246287.65</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 246287-65</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-31</Date>
+         <ExtID>e4d5101e-3ebb-491b-87a9-c16669b173aa</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <OperationInfo>
+         <PayDoc docKind="10" id="WSHHD218V0000004">
+            <PayDocRu>
+               <DocNo>46</DocNo>
+               <DocDate>2021-08-24</DocDate>
+               <Sum>2400</Sum>
+               <Payer>
+                  <Name>ООО "Тест Директ Банк"</Name>
+                  <INN>0329156629</INN>
+                  <Account>40702810701300009144</Account>
+                  <Bank>
+                     <BIC>044525593</BIC>
+                     <Name>АО "АЛЬФА-БАНК" г Москва</Name>
+                     <CorrespAcc>30101810200000000593</CorrespAcc>
+                  </Bank>
+               </Payer>
+               <Payee>
+                  <Name>ПАО "МегаФон"</Name>
+                  <INN>7812014560</INN>
+                  <Account>40702810538050107202</Account>
+                  <Bank>
+                     <BIC>044525225</BIC>
+                     <Name>ПАО СБЕРБАНК Г. МОСКВА</Name>
+                     <CorrespAcc>30101810400000000225</CorrespAcc>
+                  </Bank>
+               </Payee>
+               <PaymentKind>электронно</PaymentKind>
+               <TransitionKind>01</TransitionKind>
+               <Priority>5</Priority>
+               <Purpose>Оплата по счету Сумма 2400-00</Purpose>
+            </PayDocRu>
+         </PayDoc>
+         <DC>1</DC>
+         <Date>2021-08-31</Date>
+         <ExtID>34f93179-4bc3-4f37-a903-c4a918351846</ExtID>
+         <Stamp>
+            <BIC>044525593</BIC>
+            <Name>АО "АЛЬФА-БАНК"</Name>
+            <CorrespAcc>30101810200000000593</CorrespAcc>
+            <Branch>MOPY</Branch>
+            <Status>
+               <Code>01</Code>
+               <Name>Принят</Name>
+               <MoreInfo>-</MoreInfo>
+            </Status>
+         </Stamp>
+      </OperationInfo>
+      <Stamp>
+         <BIC>044525593</BIC>
+         <Name>АО "АЛЬФА-БАНК"</Name>
+         <CorrespAcc>30101810200000000593</CorrespAcc>
+         <Branch>MOPY</Branch>
+      </Stamp>
+   </Data>
+   <ExtIDStatementRequest>09kf1u30p2-1637911284</ExtIDStatementRequest>
+</Statement>
