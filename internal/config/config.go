@@ -14,6 +14,7 @@ type Configuration struct {
     RedisUrl           string `yaml:"redis_url"`
     LogPath            string `yaml:"log_path"`
     RotateLogPath      string `yaml:"rotate_log_path"`
+    HttpHost           string `yaml:"http_host"`
     HttpPort           string `yaml:"http_port"`
     ApiToken           string `yaml:"api_token"`
     ApiBillingUrl      string `yaml:"api_billing_url"`

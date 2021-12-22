@@ -4,6 +4,7 @@ grpc_port: "8080"
 redis_url: "localhost:6379"
 log_path: "./log/log.txt"
 rotate_log_path: "./log/%Y-%m-%d.log"
+http_host: "127.0.0.1"
 http_port: "8081"
 api_token: "api_token"
 

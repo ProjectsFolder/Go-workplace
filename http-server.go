@@ -39,7 +39,7 @@ func main() {
         }
     }
 
-    err = router.Run(":" + cfg.HttpPort)
+    err = router.Run(cfg.HttpHost + ":" + cfg.HttpPort)
     if err != nil {
         log.Fatal("Unable to start server:", err)
     }
