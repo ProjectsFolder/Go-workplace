@@ -10,12 +10,23 @@ import (
 func main() {
     container := injector.GetContainer()
 
-    err := container.Invoke(func(db *gorm.DB, repository *database.ProductRepositoryImpl) {
+    err := container.Invoke(func(db *gorm.DB, repository database.ProductRepository) {
         database.Migrate(db)
 
-        products := repository.GetProductsLikeName("compu%")
+        products, err := repository.GetProductsLikeName("computer2%")
+        if err != nil {
+            panic(err)
+        }
         for _, product := range products {
-            fmt.Println(fmt.Sprintf("id: %d, name: %s", product.ID, product.Name))
+            creator := "none"
+            if product.Creator != nil {
+                creator = product.Creator.Name
+            }
+            fmt.Println(fmt.Sprintf("id: %d, name: %s, user: %s",
+                product.ID,
+                product.Name,
+                creator,
+            ))
         }
     })
 

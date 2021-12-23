@@ -7,5 +7,5 @@ type Product struct {
     Name      string
     Price     uint
     UserRefer int
-    Creator   User `gorm:"foreignKey:UserRefer"`
+    Creator   *User `gorm:"foreignKey:UserRefer"`
 }

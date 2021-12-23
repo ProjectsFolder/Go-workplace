@@ -17,13 +17,13 @@ import (
 type ProductRepositoryMock struct {
 	t minimock.Tester
 
-	funcGetProducts          func(limit int, offset int) (pa1 []entity.Product, i1 int64)
+	funcGetProducts          func(limit int, offset int) (pa1 []entity.Product, i1 int64, err error)
 	inspectFuncGetProducts   func(limit int, offset int)
 	afterGetProductsCounter  uint64
 	beforeGetProductsCounter uint64
 	GetProductsMock          mProductRepositoryMockGetProducts
 
-	funcGetProductsLikeName          func(name string) (pa1 []entity.Product)
+	funcGetProductsLikeName          func(name string) (pa1 []entity.Product, err error)
 	inspectFuncGetProductsLikeName   func(name string)
 	afterGetProductsLikeNameCounter  uint64
 	beforeGetProductsLikeNameCounter uint64
@@ -73,6 +73,7 @@ type ProductRepositoryMockGetProductsParams struct {
 type ProductRepositoryMockGetProductsResults struct {
 	pa1 []entity.Product
 	i1  int64
+	err error
 }
 
 // Expect sets up expected params for ProductRepository.GetProducts
@@ -107,7 +108,7 @@ func (mmGetProducts *mProductRepositoryMockGetProducts) Inspect(f func(limit int
 }
 
 // Return sets up results that will be returned by ProductRepository.GetProducts
-func (mmGetProducts *mProductRepositoryMockGetProducts) Return(pa1 []entity.Product, i1 int64) *ProductRepositoryMock {
+func (mmGetProducts *mProductRepositoryMockGetProducts) Return(pa1 []entity.Product, i1 int64, err error) *ProductRepositoryMock {
 	if mmGetProducts.mock.funcGetProducts != nil {
 		mmGetProducts.mock.t.Fatalf("ProductRepositoryMock.GetProducts mock is already set by Set")
 	}
@@ -115,12 +116,12 @@ func (mmGetProducts *mProductRepositoryMockGetProducts) Return(pa1 []entity.Prod
 	if mmGetProducts.defaultExpectation == nil {
 		mmGetProducts.defaultExpectation = &ProductRepositoryMockGetProductsExpectation{mock: mmGetProducts.mock}
 	}
-	mmGetProducts.defaultExpectation.results = &ProductRepositoryMockGetProductsResults{pa1, i1}
+	mmGetProducts.defaultExpectation.results = &ProductRepositoryMockGetProductsResults{pa1, i1, err}
 	return mmGetProducts.mock
 }
 
 //Set uses given function f to mock the ProductRepository.GetProducts method
-func (mmGetProducts *mProductRepositoryMockGetProducts) Set(f func(limit int, offset int) (pa1 []entity.Product, i1 int64)) *ProductRepositoryMock {
+func (mmGetProducts *mProductRepositoryMockGetProducts) Set(f func(limit int, offset int) (pa1 []entity.Product, i1 int64, err error)) *ProductRepositoryMock {
 	if mmGetProducts.defaultExpectation != nil {
 		mmGetProducts.mock.t.Fatalf("Default expectation is already set for the ProductRepository.GetProducts method")
 	}
@@ -149,13 +150,13 @@ func (mmGetProducts *mProductRepositoryMockGetProducts) When(limit int, offset i
 }
 
 // Then sets up ProductRepository.GetProducts return parameters for the expectation previously defined by the When method
-func (e *ProductRepositoryMockGetProductsExpectation) Then(pa1 []entity.Product, i1 int64) *ProductRepositoryMock {
-	e.results = &ProductRepositoryMockGetProductsResults{pa1, i1}
+func (e *ProductRepositoryMockGetProductsExpectation) Then(pa1 []entity.Product, i1 int64, err error) *ProductRepositoryMock {
+	e.results = &ProductRepositoryMockGetProductsResults{pa1, i1, err}
 	return e.mock
 }
 
 // GetProducts implements database.ProductRepository
-func (mmGetProducts *ProductRepositoryMock) GetProducts(limit int, offset int) (pa1 []entity.Product, i1 int64) {
+func (mmGetProducts *ProductRepositoryMock) GetProducts(limit int, offset int) (pa1 []entity.Product, i1 int64, err error) {
 	mm_atomic.AddUint64(&mmGetProducts.beforeGetProductsCounter, 1)
 	defer mm_atomic.AddUint64(&mmGetProducts.afterGetProductsCounter, 1)
 
@@ -173,7 +174,7 @@ func (mmGetProducts *ProductRepositoryMock) GetProducts(limit int, offset int) (
 	for _, e := range mmGetProducts.GetProductsMock.expectations {
 		if minimock.Equal(e.params, mm_params) {
 			mm_atomic.AddUint64(&e.Counter, 1)
-			return e.results.pa1, e.results.i1
+			return e.results.pa1, e.results.i1, e.results.err
 		}
 	}
 
@@ -189,7 +190,7 @@ func (mmGetProducts *ProductRepositoryMock) GetProducts(limit int, offset int) (
 		if mm_results == nil {
 			mmGetProducts.t.Fatal("No results are set for the ProductRepositoryMock.GetProducts")
 		}
-		return (*mm_results).pa1, (*mm_results).i1
+		return (*mm_results).pa1, (*mm_results).i1, (*mm_results).err
 	}
 	if mmGetProducts.funcGetProducts != nil {
 		return mmGetProducts.funcGetProducts(limit, offset)
@@ -288,6 +289,7 @@ type ProductRepositoryMockGetProductsLikeNameParams struct {
 // ProductRepositoryMockGetProductsLikeNameResults contains results of the ProductRepository.GetProductsLikeName
 type ProductRepositoryMockGetProductsLikeNameResults struct {
 	pa1 []entity.Product
+	err error
 }
 
 // Expect sets up expected params for ProductRepository.GetProductsLikeName
@@ -322,7 +324,7 @@ func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Inspect(
 }
 
 // Return sets up results that will be returned by ProductRepository.GetProductsLikeName
-func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Return(pa1 []entity.Product) *ProductRepositoryMock {
+func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Return(pa1 []entity.Product, err error) *ProductRepositoryMock {
 	if mmGetProductsLikeName.mock.funcGetProductsLikeName != nil {
 		mmGetProductsLikeName.mock.t.Fatalf("ProductRepositoryMock.GetProductsLikeName mock is already set by Set")
 	}
@@ -330,12 +332,12 @@ func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Return(p
 	if mmGetProductsLikeName.defaultExpectation == nil {
 		mmGetProductsLikeName.defaultExpectation = &ProductRepositoryMockGetProductsLikeNameExpectation{mock: mmGetProductsLikeName.mock}
 	}
-	mmGetProductsLikeName.defaultExpectation.results = &ProductRepositoryMockGetProductsLikeNameResults{pa1}
+	mmGetProductsLikeName.defaultExpectation.results = &ProductRepositoryMockGetProductsLikeNameResults{pa1, err}
 	return mmGetProductsLikeName.mock
 }
 
 //Set uses given function f to mock the ProductRepository.GetProductsLikeName method
-func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Set(f func(name string) (pa1 []entity.Product)) *ProductRepositoryMock {
+func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) Set(f func(name string) (pa1 []entity.Product, err error)) *ProductRepositoryMock {
 	if mmGetProductsLikeName.defaultExpectation != nil {
 		mmGetProductsLikeName.mock.t.Fatalf("Default expectation is already set for the ProductRepository.GetProductsLikeName method")
 	}
@@ -364,13 +366,13 @@ func (mmGetProductsLikeName *mProductRepositoryMockGetProductsLikeName) When(nam
 }
 
 // Then sets up ProductRepository.GetProductsLikeName return parameters for the expectation previously defined by the When method
-func (e *ProductRepositoryMockGetProductsLikeNameExpectation) Then(pa1 []entity.Product) *ProductRepositoryMock {
-	e.results = &ProductRepositoryMockGetProductsLikeNameResults{pa1}
+func (e *ProductRepositoryMockGetProductsLikeNameExpectation) Then(pa1 []entity.Product, err error) *ProductRepositoryMock {
+	e.results = &ProductRepositoryMockGetProductsLikeNameResults{pa1, err}
 	return e.mock
 }
 
 // GetProductsLikeName implements database.ProductRepository
-func (mmGetProductsLikeName *ProductRepositoryMock) GetProductsLikeName(name string) (pa1 []entity.Product) {
+func (mmGetProductsLikeName *ProductRepositoryMock) GetProductsLikeName(name string) (pa1 []entity.Product, err error) {
 	mm_atomic.AddUint64(&mmGetProductsLikeName.beforeGetProductsLikeNameCounter, 1)
 	defer mm_atomic.AddUint64(&mmGetProductsLikeName.afterGetProductsLikeNameCounter, 1)
 
@@ -388,7 +390,7 @@ func (mmGetProductsLikeName *ProductRepositoryMock) GetProductsLikeName(name str
 	for _, e := range mmGetProductsLikeName.GetProductsLikeNameMock.expectations {
 		if minimock.Equal(e.params, mm_params) {
 			mm_atomic.AddUint64(&e.Counter, 1)
-			return e.results.pa1
+			return e.results.pa1, e.results.err
 		}
 	}
 
@@ -404,7 +406,7 @@ func (mmGetProductsLikeName *ProductRepositoryMock) GetProductsLikeName(name str
 		if mm_results == nil {
 			mmGetProductsLikeName.t.Fatal("No results are set for the ProductRepositoryMock.GetProductsLikeName")
 		}
-		return (*mm_results).pa1
+		return (*mm_results).pa1, (*mm_results).err
 	}
 	if mmGetProductsLikeName.funcGetProductsLikeName != nil {
 		return mmGetProductsLikeName.funcGetProductsLikeName(name)

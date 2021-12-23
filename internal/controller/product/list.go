@@ -22,7 +22,7 @@ func List(context *gin.Context) {
     response.PerPage = pager.PerPage
     injector.GetContainer().Invoke(func(repository database.ProductRepository) {
         offset := pager.PerPage * (pager.Page - 1)
-        products, total := repository.GetProducts(pager.PerPage, offset)
+        products, total, _ := repository.GetProducts(pager.PerPage, offset)
         response.Total = total
         response.Products = make([]productDto.Product, len(products))
         for key, product := range products {

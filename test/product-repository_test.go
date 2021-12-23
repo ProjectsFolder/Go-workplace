@@ -7,7 +7,7 @@ import (
 
 func TestProductRepository(t *testing.T)  {
     repository := NewProductRepositoryMock(t)
-    repository.GetProductsLikeNameMock.Set(func(name string) []entity.Product {
+    repository.GetProductsLikeNameMock.Set(func(name string) ([]entity.Product, error) {
         var products []entity.Product
         if "exists" == name {
             for i := 0; i < 3; i++ {
@@ -15,10 +15,10 @@ func TestProductRepository(t *testing.T)  {
             }
         }
         
-        return products
+        return products, nil
     })
 
-    products := repository.GetProductsLikeName("exists")
+    products, _ := repository.GetProductsLikeName("exists")
     if len(products) == 0 {
        t.Error("products is empty")
     } else {
@@ -29,7 +29,7 @@ func TestProductRepository(t *testing.T)  {
         }
     }
 
-    products = repository.GetProductsLikeName("not-exists")
+    products, _ = repository.GetProductsLikeName("not-exists")
     if len(products) != 0 {
        t.Error("products is not empty")
     }
