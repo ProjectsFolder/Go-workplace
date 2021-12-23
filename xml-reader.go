@@ -10,14 +10,14 @@ import (
 
 type Statement struct{
     XMLName xml.Name `xml:"Statement"`
-    Data struct{
+    Data *struct{
         Operations []struct{
-            PayDoc struct{
+            PayDoc *struct{
                 Id string `xml:"id,attr"`
-                Details struct {
+                Details *struct {
                     Date docTime `xml:"DocDate"`
                     Sum float32 `xml:"Sum"`
-                    Payer struct{
+                    Payer *struct{
                         Name string `xml:"Name"`
                         Inn string `xml:"INN"`
                     } `xml:"Payer"`
@@ -66,7 +66,7 @@ func main() {
     }
 
     for _, operation := range statement.Data.Operations {
-        if operation.PayDoc.Details.Sum != 0 {
+        if operation.PayDoc.Details != nil {
             fmt.Println(fmt.Sprintf("id: %s; date: %s; sum: %f; name: %s; inn: %s; dc: %d",
                 operation.PayDoc.Id,
                 operation.PayDoc.Details.Date,
