@@ -10,6 +10,7 @@ import (
     "time"
     "workplace/internal/config"
     "workplace/internal/database"
+    httpJwt "workplace/internal/http/jwt"
     "workplace/internal/services"
 )
 
@@ -92,6 +93,13 @@ func buildContainer() *dig.Container {
         err = injector.Provide(func(telegram *services.Telegram) (*log.Logger, error) {
             return createLogger(telegram), nil
         }, dig.Name("telegramLogger"))
+        if err != nil {
+            panic(err)
+        }
+
+        err = injector.Provide(func(config *config.Configuration) (*httpJwt.Jwt, error) {
+            return httpJwt.NewJWT(config.JwtSecret), nil
+        })
         if err != nil {
             panic(err)
         }

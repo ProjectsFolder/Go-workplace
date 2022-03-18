@@ -14,3 +14,5 @@ api_billing_password: "api_billing_password"
 
 api_telegram_log_bot_key: "api_telegram_log_bot_key"
 api_telegram_log_bot_chat_id: "api_telegram_log_bot_chat_id"
+
+jwt_secret: "jwt_secret"

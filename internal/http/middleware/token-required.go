@@ -2,7 +2,9 @@ package httpMiddleware
 
 import (
     "github.com/gin-gonic/gin"
+    "regexp"
     "workplace/internal/config"
+    httpJwt "workplace/internal/http/jwt"
     "workplace/internal/http/response"
     "workplace/internal/injector"
 )
@@ -22,6 +24,26 @@ func TokenRequiredMiddleware() gin.HandlerFunc {
 
         if qToken != token {
             c.AbortWithStatusJSON(401, httpResponse.Error("Invalid API token"))
+            return
+        }
+
+        c.Next()
+    }
+}
+
+func JWTTokenRequiredMiddleware() gin.HandlerFunc {
+    var jLocal *httpJwt.Jwt
+    injector.GetContainer().Invoke(func(j *httpJwt.Jwt) {
+        jLocal = j
+    })
+    return func(c *gin.Context) {
+        tokenString := c.GetHeader("Authorization")
+        re := regexp.MustCompile(`^Bearer\s`)
+        tokenString = re.ReplaceAllString(tokenString, "")
+        valid, err := jLocal.ValidateToken(tokenString)
+
+        if err != nil || !valid {
+            c.AbortWithStatusJSON(401, httpResponse.Error("incorrect jwt-token"))
             return
         }
 

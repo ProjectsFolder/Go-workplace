@@ -22,6 +22,7 @@ type Configuration struct {
     ApiBillingPassword string `yaml:"api_billing_password"`
     TelegramLogBotKey  string `yaml:"api_telegram_log_bot_key"`
     TelegramLogBotChat string `yaml:"api_telegram_log_bot_chat_id"`
+    JwtSecret          string `yaml:"jwt_secret"`
 }
 
 var (
